@@ -21,9 +21,9 @@
 
   <!-- 牵线服务 -->
   <rect x="440" y="96" width="400" height="136" rx="14" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
-  <text x="640" y="126" text-anchor="middle" class="h">牵线服务（Cloudflare 免费服务）</text>
+  <text x="640" y="126" text-anchor="middle" class="h">牵线节点（任何人都可以提供）</text>
   <text x="640" y="152" text-anchor="middle" class="b">帮两台设备找到彼此、交换联系方式</text>
-  <text x="640" y="174" text-anchor="middle" class="t">Workers + Durable Objects · STUN 打洞探测</text>
+  <text x="640" y="174" text-anchor="middle" class="t">Rust 节点 · GitHub 注册中心 · 可水平扩展</text>
   <rect x="490" y="188" width="300" height="28" rx="14" fill="#e2e8f0"/>
   <text x="640" y="207" text-anchor="middle" class="g" style="fill:#475569">只看到一次性随机编号 · 看不到任何内容</text>
 
@@ -64,7 +64,7 @@
   <rect x="904" y="400" width="312" height="172" rx="10" fill="#ecfdf5" stroke="#86efac"/>
   <text x="1060" y="426" text-anchor="middle" class="b" style="font-weight:700">辅种小助手</text>
   <text x="922" y="452" class="s">· 知道这份文件在哪些站</text>
-  <text x="936" y="470" class="t">站点 + 种子编号（只存本机）</text>
+  <text x="936" y="470" class="t">tracker 域名 + info 字典（去掉 passkey）</text>
   <text x="922" y="496" class="s">· 只回答通过三道锁的人</text>
   <text x="936" y="514" class="t">每天应答次数有上限</text>
   <text x="922" y="540" class="s">· 只说双方共同所在的站</text>
@@ -78,7 +78,7 @@
 
   <!-- 三道锁 -->
   <circle cx="420" cy="458" r="11" fill="#2563eb"/><text x="420" y="462.5" text-anchor="middle" class="n">4</text>
-  <text x="438" y="463" class="s" style="font-weight:700">过三道锁，才交换「双方都是会员的站」的种子编号</text>
+  <text x="438" y="463" class="s" style="font-weight:700">过三道锁，才交换「双方都是会员的站」的种子信息</text>
 
   <rect x="410" y="478" width="146" height="114" rx="10" fill="#fffbeb" stroke="#fdba74" stroke-width="1.5"/>
   <text x="483" y="502" text-anchor="middle" class="b" style="font-weight:700">锁1 文件暗号</text>
@@ -97,9 +97,9 @@
   <rect x="724" y="478" width="146" height="114" rx="10" fill="#fffbeb" stroke="#fdba74" stroke-width="1.5"/>
   <text x="797" y="502" text-anchor="middle" class="b" style="font-weight:700">锁3 会员验证</text>
   <text x="797" y="524" text-anchor="middle" class="s">没有该站账号</text>
-  <text x="797" y="542" text-anchor="middle" class="s">→ 拿不到编号</text>
+  <text x="797" y="542" text-anchor="middle" class="s">→ 拿不到种子信息</text>
   <text x="797" y="564" text-anchor="middle" class="t">站点周钥匙 AEAD</text>
-  <text x="797" y="580" text-anchor="middle" class="t">或 下载挑战</text>
+  <text x="797" y="580" text-anchor="middle" class="t">或 scrape 挑战</text>
 
   <!-- 中继 -->
   <path d="M380,594 C392,660 440,668 488,668" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="7 6" marker-end="url(#ay)"/>
@@ -108,16 +108,16 @@
   <rect x="490" y="620" width="300" height="96" rx="14" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 5"/>
   <text x="640" y="648" text-anchor="middle" class="b" style="font-weight:700">中继（直连失败时才用）</text>
   <text x="640" y="670" text-anchor="middle" class="s">只负责转发，看到的全是乱码</text>
-  <text x="640" y="694" text-anchor="middle" class="t">DO WebSocket · 可选 TURN · 社区自建</text>
+  <text x="640" y="694" text-anchor="middle" class="t">社区节点 · WebSocket over 443</text>
 
   <!-- PT 站点 -->
   <line x1="220" y1="574" x2="220" y2="634" stroke="#2563eb" stroke-width="2" marker-end="url(#ab)"/>
   <rect x="40" y="636" width="360" height="124" rx="14" fill="#eef2ff" stroke="#a5b4fc" stroke-width="1.5"/>
-  <text x="220" y="664" text-anchor="middle" class="h">PT 站点（你有账号的站）</text>
+  <text x="220" y="664" text-anchor="middle" class="h">生成种子并做种</text>
   <circle cx="72" cy="688" r="11" fill="#2563eb"/><text x="72" y="692.5" text-anchor="middle" class="n">5</text>
-  <text x="90" y="693" class="s">用你自己的账号下载种子</text>
-  <text x="90" y="716" class="s">校验 100% 通过才做种，否则删除</text>
-  <text x="90" y="740" class="t">强制完整校验 · 不下载任何数据</text>
+  <text x="90" y="693" class="s">种子信息 + 你自己的 passkey</text>
+  <text x="90" y="716" class="s">交给下载器直接做种，不读盘</text>
+  <text x="90" y="740" class="t">info 字典 + 本机 announce · 免 hash 校验</text>
 
   <!-- 图例 -->
   <rect x="880" y="636" width="360" height="124" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
@@ -127,10 +127,10 @@
   <line x1="904" y1="710" x2="964" y2="710" stroke="#94a3b8" stroke-width="2" stroke-dasharray="7 6"/>
   <text x="976" y="715" class="s">只传随机编号或乱码</text>
   <line x1="904" y1="736" x2="964" y2="736" stroke="#2563eb" stroke-width="2"/>
-  <text x="976" y="741" class="s">本机内部 / 你和站点之间</text>
+  <text x="976" y="741" class="s">只在你自己的设备内部</text>
 
   <!-- 安全要点 -->
   <rect x="40" y="790" width="1200" height="64" rx="14" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1.5"/>
   <text x="640" y="818" text-anchor="middle" class="b" style="font-weight:700;fill:#166534">安全要点</text>
-  <text x="640" y="842" text-anchor="middle" class="s">没有中心服务器 · 账号永不出本机 · 牵线和中继看不到内容 · 没文件 / 没账号什么也拿不到 · 假信息会被 100% 校验挡住</text>
+  <text x="640" y="842" text-anchor="middle" class="s">没有中心服务器 · 账号永不出本机 · 牵线和中继看不到内容 · 没文件 / 没账号什么也拿不到 · 假信息对不上本机文件结构就丢弃</text>
 </svg>
