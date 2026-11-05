@@ -21,7 +21,7 @@ docs/
 ├─ design/            总体设计：架构、插件系统、tracker 与记账、搜索、前端、AI、路线图
 ├─ platform/          平台契约：插件 API、名字目录（服务 / 事件 / 钩子 / 权限 / 插槽…）、规范、内核设计
 ├─ plugins/           每个官方插件的设计文档与实现状态
-├─ components/        独立组件的设计：pt-tracker、web 前端
+├─ components/        独立组件的设计：pt-tracker、web 前端、xseed 去中心化辅种
 ├─ process/           文档流程与模板
 ├─ proposals/         征求意见稿：尚未立项的方案
 └─ reviews/           设计评审记录
