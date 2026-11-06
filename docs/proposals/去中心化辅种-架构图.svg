@@ -72,8 +72,8 @@
 
   <!-- 加密直连 -->
   <circle cx="470" cy="380" r="11" fill="#2563eb"/><text x="470" y="384.5" text-anchor="middle" class="n">3</text>
-  <text x="488" y="385" class="b" style="font-weight:700;fill:#15803d">建立加密连接（优先直连）</text>
-  <text x="640" y="408" text-anchor="middle" class="t">QUIC + UDP 打洞 · Noise 端到端加密</text>
+  <text x="488" y="385" class="b" style="font-weight:700;fill:#15803d">加密对话（双方互相看不到 IP）</text>
+  <text x="640" y="408" text-anchor="middle" class="t">Noise 端到端加密 · 全程经节点转发 · 不直连</text>
   <line x1="380" y1="424" x2="900" y2="424" stroke="#16a34a" stroke-width="4" marker-start="url(#ag)" marker-end="url(#ag)"/>
 
   <!-- 三道锁 -->
@@ -104,11 +104,11 @@
   <!-- 中继 -->
   <path d="M380,594 C392,660 440,668 488,668" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="7 6" marker-end="url(#ay)"/>
   <path d="M900,594 C888,660 840,668 792,668" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="7 6" marker-end="url(#ay)"/>
-  <text x="482" y="700" class="g" text-anchor="end">备用通道</text>
+  
   <rect x="490" y="620" width="300" height="96" rx="14" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 5"/>
-  <text x="640" y="648" text-anchor="middle" class="b" style="font-weight:700">中继（直连失败时才用）</text>
-  <text x="640" y="670" text-anchor="middle" class="s">只负责转发，看到的全是乱码</text>
-  <text x="640" y="694" text-anchor="middle" class="t">社区节点 · WebSocket over 443</text>
+  <text x="640" y="648" text-anchor="middle" class="b" style="font-weight:700">信箱节点（各连自己选的一个）</text>
+  <text x="640" y="670" text-anchor="middle" class="s">只转发乱码，对方拿不到你的 IP</text>
+  <text x="640" y="694" text-anchor="middle" class="t">两跳转发 · 登记按索引节点公钥加密</text>
 
   <!-- PT 站点 -->
   <line x1="220" y1="574" x2="220" y2="634" stroke="#2563eb" stroke-width="2" marker-end="url(#ab)"/>
@@ -125,12 +125,12 @@
   <line x1="904" y1="684" x2="964" y2="684" stroke="#16a34a" stroke-width="4"/>
   <text x="976" y="689" class="s">端到端加密，只有双方看得懂</text>
   <line x1="904" y1="710" x2="964" y2="710" stroke="#94a3b8" stroke-width="2" stroke-dasharray="7 6"/>
-  <text x="976" y="715" class="s">只传随机编号或乱码</text>
+  <text x="976" y="715" class="s">经节点转发，只有随机编号或乱码</text>
   <line x1="904" y1="736" x2="964" y2="736" stroke="#2563eb" stroke-width="2"/>
   <text x="976" y="741" class="s">本机内部 / 你和站点之间</text>
 
   <!-- 安全要点 -->
   <rect x="40" y="790" width="1200" height="64" rx="14" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1.5"/>
   <text x="640" y="818" text-anchor="middle" class="b" style="font-weight:700;fill:#166534">安全要点</text>
-  <text x="640" y="842" text-anchor="middle" class="s">没有中心服务器 · 账号永不出本机 · 牵线和中继看不到内容 · 没文件 / 没账号什么也拿不到 · 假信息对不上本机文件结构就丢弃</text>
+  <text x="640" y="842" text-anchor="middle" class="s">没有中心服务器 · 账号永不出本机 · 对方拿不到你的 IP · 节点看不到内容 · 没文件 / 没账号什么也拿不到 · 假信息对不上本机文件结构就丢弃</text>
 </svg>
