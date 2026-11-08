@@ -21,9 +21,8 @@ docs/
 ├─ design/            总体设计：架构、插件系统、tracker 与记账、搜索、前端、AI、路线图
 ├─ platform/          平台契约：插件 API、名字目录（服务 / 事件 / 钩子 / 权限 / 插槽…）、规范、内核设计
 ├─ plugins/           每个官方插件的设计文档与实现状态
-├─ components/        独立组件的设计：pt-tracker、web 前端、xseed 去中心化辅种
+├─ components/        独立组件的设计：pt-tracker、web 前端
 ├─ process/           文档流程与模板
-├─ proposals/         征求意见稿：尚未立项的方案
 └─ reviews/           设计评审记录
 ```
 
@@ -51,6 +50,5 @@ docs/
 
 - [文档流程与模板](process/README.md) — 需求 → 概要设计 → 详细设计 → 测试计划 → 评审
 - [评审记录](reviews/)
-- [征求意见稿](proposals/) — 如[去中心化辅种](proposals/去中心化辅种-征求意见稿.md)
 
 > 设计文档写于实现之前，部分细节已在实现中调整。阅读时请对照 [与设计文档的差异](dev/design-deviations.md) 与 [实现明细](dev/implementation-status.md)。
